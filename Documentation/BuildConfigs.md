@@ -54,7 +54,7 @@ __Linux__
         - 42.1
     - (TBD: Alpine)
 
-- Builds each architecture:
+- Builds for each architecture:
     - Distro Agnostic Portable (TODO: glibc version?) (TODO?Builds on which OS?)
         - Carries local dynamically linked OS dependencies.
         - Testing on the result of this build needs to happen on all OS's.
