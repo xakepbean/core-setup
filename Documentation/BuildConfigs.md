@@ -6,7 +6,7 @@ __Windows__
     - x86
     - x64
     - arm32
-    - arm64
+    - arm64 (TODO, confirm this one for 2.0?)
 
 - OS's
     Windows 7+
@@ -24,6 +24,8 @@ __Windows__
         - Source which when extracted can reproduce all the build flavors with a simple build command with parameter for build flavors.
         - Pdb's matching the build for each build flavor.
     - Msi installers for each architecture
+    - NuGet
+        - NetCore.App packages containing results of the Portable build.
 
 __Linux__
 
@@ -74,7 +76,7 @@ __Linux__
         - Contains Distro Specific OS build assets and references dependencies through package manager.
             - This is how people get the latest. As soon as a version is in a distro, they get it there.
     - NuGet
-        - NetCore.App packge Distro Agnostic Portable (glibc version)
+        - NetCore.App packages Distro Agnostic Portable (glibc version)
         - (TBD: Distro Specific Portable for using specific RID's)
 
 __OSX__
@@ -82,7 +84,7 @@ __OSX__
 - Architectures:
     - x64
 
-- OS'
+- OS's
     - OSX 10.11+
 
 - Builds for each architecture:
@@ -97,3 +99,5 @@ __OSX__
         - Pdb's matching the build for each build flavor.
     - pkg of Portable binaries
     - (TBD - Brew)
+    - NuGet
+        - NetCore.App packages Portable binary build.
