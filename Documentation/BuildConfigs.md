@@ -12,10 +12,10 @@ __Windows__
     Windows 7+
 
 - Builds for each architecture:
-    - Portable
+    - All OS's
       - Build and testing on latest stable supported OS version.
-      - Additional testing on lowest supported OS. 
-      - Testing on Full .NET Framework in for some binaries for compat.
+      - Additional testing on lowest supported OS version. 
+      - Testing on Full .NET Framework for some binaries for compat.
       - Testing in UWP and CoreRT for compat.
 
 - Packages
@@ -55,29 +55,29 @@ __Linux__
     - (TBD: Alpine)
 
 - Builds for each architecture:
-    - Distro Agnostic Portable (TODO: glibc version?) (TODO?Builds on which OS?)
+    - Distro Agnostic (glibc version 2.14) (TODO: Builds on which OS?)
         - Carries local dynamically linked OS dependencies.
-        - Testing on the result of this build needs to happen on all OS's.
-    - Distro Specific OS 
+        - Testing of the result of this build needs to happen on all OS's.
+    - Distro Specific with dependencies
         - Dynamically linked against the OS copy of dependencies.
         - This is the way distros build and we build for our native package manager packages.
         - Testing is on the same OS as built on.
-    - (TBD: Distro Specific Portable) 
+    - (TBD: Distro Specific without dependencies)
         - This would be to provide RID specific capabilities for standalone apps that can be distro specific without needing to install dependencies.
         - Testing on this would be on the OS it was built on.
 
 - Packages
     - tar.gz's
-        - Contains Distro Agnostic Portable (glibc version)
-        - (TBD: also contains result of portable distro specific build)
+        - Contains Distro Agnostic binaries.
+        - (TBD: Contains the Distro Specific without depencies binaries)
         - Source which when extracted can reproduce all the build flavors with a simple build command with parameter for build flavors.
         - Pdb's matching the build for each build flavor.
     - apt and yum
-        - Contains Distro Specific OS build assets and references dependencies through package manager.
+        - Contains Distro Specific with dependencies build assets and references dependencies through package manager.
             - This is how people get the latest. As soon as a version is in a distro, they get it there.
     - NuGet
-        - NetCore.App packages Distro Agnostic Portable (glibc version)
-        - (TBD: Distro Specific Portable for using specific RID's)
+        - NetCore.App packages Distro Agnostic binaries
+        - (TBD: Distro Specific withtout dependencies for using specific RID's)
 
 __OSX__
 
@@ -88,16 +88,16 @@ __OSX__
     - OSX 10.11+
 
 - Builds for each architecture:
-    - Portable
+    - All OS's
       - Testing on the build OS where the build OS is highest supported stable OS.
       - Additional testing on lowest supported OS.
 
 - Packages
     - tar.gz's
-        - Portable binaries
+        - binaries
         - Source which when extracted can reproduce all the build flavors with a simple build command with parameter for build flavors.
         - Pdb's matching the build for each build flavor.
-    - pkg of Portable binaries
+    - pkg of binaries
     - (TBD - Brew)
     - NuGet
         - NetCore.App packages Portable binary build.
