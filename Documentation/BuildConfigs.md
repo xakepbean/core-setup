@@ -9,7 +9,7 @@ __Windows__
     - arm64 (TODO, confirm this one for 2.0?)
 
 - OS's
-    Windows 7+
+    Windows 7 SP1+
 
 - Builds for each architecture:
     - All OS's
@@ -21,11 +21,11 @@ __Windows__
 - Packages
     - zip's
         - libraries for each build flavor
-        - Source which when extracted can reproduce all the build flavors with a simple build command with parameter for build flavors.
+        - Source which when extracted can reproduce all the build combo's with a simple build command with parameter for build combo.
         - Pdb's matching the build for each build flavor.
     - Msi installers for each architecture
     - NuGet
-        - NetCore.App packages containing results of the Portable build.
+        - NetCore.App packages containing results of the build that runs on all OS's.
 
 __Linux__
 
@@ -70,7 +70,7 @@ __Linux__
     - tar.gz's
         - Contains Distro Agnostic binaries.
         - (TBD: Contains the Distro Specific without depencies binaries)
-        - Source which when extracted can reproduce all the build flavors with a simple build command with parameter for build flavors.
+        - Source which when extracted can reproduce all the build combo's with a simple build command with parameter for build combos.
         - Pdb's matching the build for each build flavor.
     - apt and yum
         - Contains Distro Specific with dependencies build assets and references dependencies through package manager.
@@ -95,9 +95,9 @@ __OSX__
 - Packages
     - tar.gz's
         - binaries
-        - Source which when extracted can reproduce all the build flavors with a simple build command with parameter for build flavors.
+        - Source which when extracted can reproduce all the build combos with a simple build command with parameter for build combos.
         - Pdb's matching the build for each build flavor.
     - pkg of binaries
     - (TBD - Brew)
     - NuGet
-        - NetCore.App packages Portable binary build.
+        - NetCore.App packages binary build that will run on any OS.
