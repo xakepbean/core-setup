@@ -3,13 +3,13 @@
 __Windows__
 
 - Architectures:
-    - x86
-    - x64
-    - arm32
-    - arm64 (TODO, confirm this one for 2.0?)
+    - x86 (support)
+    - x64 (support)
+    - arm32 (build and test)
+    - arm64 (TODO)
 
 - OS's
-    Windows 7 SP1+
+    Windows 7 SP1+ (Test on Windows 7 SP1, Win10)
 
 - Builds for each architecture:
     - All OS's
@@ -37,22 +37,23 @@ __Linux__
 - OS's for testing and binary distribution
     - RHEL
         - 7+
-    - Centos 
+    - Centos
         - 7+
     - Debian
-        - 8+
+        - 8+ (Test on (TODO min) and 8.7 as latest)
     - Ubuntu
-        - 14.04
+        - 14.04 (TODO)
         - 16.04
         - 16.10
+        - 17.04 (TODO: release date April 2017)
     - Fedora
-        - 23
         - 24
         - 25
+        - 26 (Release date 6/6/2017)
     - OpenSuse
-        - 13.2
         - 42.1
-    - (TBD: Alpine)
+        - 42.2
+    - Alpine (TODO)
 
 - Builds for each architecture:
     - Distro Agnostic (glibc version 2.14) (TODO: Builds on which OS?)
@@ -85,11 +86,10 @@ __OSX__
     - x64
 
 - OS's
-    - OSX 10.11+
+    - OSX 10.11+ (Tested on 10.11 and 10.12)
 
 - Builds for each architecture:
     - All OS's
-      - Testing on the build OS where the build OS is highest supported stable OS.
       - Additional testing on lowest supported OS.
 
 - Packages
