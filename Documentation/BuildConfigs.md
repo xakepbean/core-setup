@@ -30,9 +30,9 @@ __Windows__
 __Linux__
 
 - Architectures:
-    - x86 (TODO: Needed for community to facilitate arm32 on Linux?)
-    - x64
-    - arm32
+    - x86 (build and test for community support)
+    - x64 (support)
+    - arm32 (build and test)
 
 - OS's for testing and binary distribution
     - RHEL
@@ -83,7 +83,7 @@ __Linux__
 __OSX__
 
 - Architectures:
-    - x64
+    - x64 (support)
 
 - OS's
     - OSX 10.11+ (Tested on 10.11 and 10.12)
