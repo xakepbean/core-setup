@@ -47,11 +47,9 @@ __Linux__
         - 16.10
         - 17.04 (TODO: release date April 2017)
     - Fedora
-        - 24
         - 25
         - 26 (Release date 6/6/2017)
     - OpenSuse
-        - 42.1
         - 42.2
     - Alpine (TODO)
 
@@ -73,7 +71,7 @@ __Linux__
         - (TBD: Contains the Distro Specific without depencies binaries)
         - Source which when extracted can reproduce all the build combo's with a simple build command with parameter for build combos.
         - Pdb's matching the build for each build flavor.
-    - apt and yum
+    - rpm and deb
         - Contains Distro Specific with dependencies build assets and references dependencies through package manager.
             - This is how people get the latest. As soon as a version is in a distro, they get it there.
     - NuGet
@@ -86,7 +84,7 @@ __OSX__
     - x64 (support)
 
 - OS's
-    - OSX 10.11+ (Tested on 10.11 and 10.12)
+    - OSX 10.11+ (Tested on 10.11 and 10.12: TODO: 10.13 dates?)
 
 - Builds for each architecture:
     - All OS's
