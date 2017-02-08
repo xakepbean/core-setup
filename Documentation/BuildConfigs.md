@@ -10,6 +10,7 @@ __Windows__
 
 - OS's
     Windows 7 SP1+ (Test on Windows 7 SP1, Win10)
+    Windows Server (TODO versions and Nano)
 
 - Builds for each architecture:
     - All OS's
@@ -26,6 +27,8 @@ __Windows__
     - Msi installers for each architecture
     - NuGet
         - NetCore.App packages containing results of the build that runs on all OS's.
+    - Docker containers
+        - TODO: What's in here.
 
 __Linux__
 
@@ -64,6 +67,8 @@ __Linux__
     - (TBD: Distro Specific without dependencies)
         - This would be to provide RID specific capabilities for standalone apps that can be distro specific without needing to install dependencies.
         - Testing on this would be on the OS it was built on.
+    - Docker containers
+        - TODO: What's in here.
 
 - Packages
     - tar.gz's
