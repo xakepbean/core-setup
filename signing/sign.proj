@@ -65,7 +65,8 @@
 
   <Target Name="SignAppxFiles" DependsOnTargets="GetSignAppxFiles">
     <CallTarget Targets="SignFiles" />
-
+  </Target>
+  
   <Target Name="GetSignAppxFiles">
     <ItemGroup>
       <FilesToSign Include="$(UWPOutputDir)*.appx">
