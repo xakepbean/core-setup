@@ -62,13 +62,15 @@ bool deps_entry_t::to_path(const pal::string_t& base, bool look_in_base, pal::st
 //
 bool deps_entry_t::to_dir_path(const pal::string_t& base, pal::string_t* str) const
 {
-    if (asset_type == asset_types::resources)
-    {
-        pal::string_t pal_relative_path = relative_path;
-        if (_X('/') != DIR_SEPARATOR)
-        {
-            replace_char(&pal_relative_path, _X('/'), DIR_SEPARATOR);
-        }
+	auto to_dir_runtime_path= [&](const pal::string_t& base, pal::string_t* str)-> bool
+	{
+		if (asset_type == asset_types::resources)
+		{
+			pal::string_t pal_relative_path = relative_path;
+			if (_X('/') != DIR_SEPARATOR)
+			{
+				replace_char(&pal_relative_path, _X('/'), DIR_SEPARATOR);
+			}
 
         // Resources are represented as "lib/<netstandrd_ver>/<ietf-code>/<ResourceAssemblyName.dll>" in the deps.json.
         // The <ietf-code> is the "directory" in the pal_relative_path below, so extract it.
@@ -87,6 +89,16 @@ bool deps_entry_t::to_dir_path(const pal::string_t& base, pal::string_t* str) co
         return to_path(base_ietf_dir, true, str);
     }
     return to_path(base, true, str);
+	};
+	pal::string_t baserun;
+	baserun.assign(base);
+	append_path(&baserun, _X("runtime"));
+	bool exists = to_dir_runtime_path(baserun,str);
+	if (!exists) {
+		exists = to_dir_runtime_path(base, str);
+		baserun.clear();
+	}
+	return exists;
 }
 // -----------------------------------------------------------------------------
 // Given a "base" directory, yield the relative path of this file in the package

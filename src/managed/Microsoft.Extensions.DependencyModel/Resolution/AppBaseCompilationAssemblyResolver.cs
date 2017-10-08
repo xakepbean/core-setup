@@ -57,8 +57,11 @@ namespace Microsoft.Extensions.DependencyModel.Resolution
             var refsPath = Path.Combine(_basePath, RefsDirectoryName);
             var isPublished = _fileSystem.Directory.Exists(refsPath);
 
+            string RunTimeDirectoryName = "runtime";
+            var runTimeRefsPath = Path.Combine(_basePath,RunTimeDirectoryName, RefsDirectoryName);
+            var isRunPublished = _fileSystem.Directory.Exists(runTimeRefsPath);
             // Resolving reference assemblies requires refs folder to exist
-            if (isReferenceAssembly && !isPublished)
+            if (isReferenceAssembly && !isPublished && !isRunPublished)
             {
                 return false;
             }
@@ -68,9 +71,19 @@ namespace Microsoft.Extensions.DependencyModel.Resolution
                 _basePath
             };
 
+            var runTimePath = Path.Combine(_basePath,RunTimeDirectoryName);
+            var isRunTime = _fileSystem.Directory.Exists(runTimePath);
+            if (isRunTime)
+            {
+                directories.Insert(0, runTimePath);
+            }
             if (isPublished)
             {
                 directories.Insert(0, refsPath);
+            }
+            if (isRunPublished)
+            {
+                directories.Insert(0, runTimeRefsPath);
             }
 
             // Only packages can come from shared runtime
